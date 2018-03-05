@@ -20,7 +20,7 @@ public class RoleRepository {
 	private EntityManager entityManager;
 
 	@SuppressWarnings("unchecked")
-	public List<String> getRoleNames(Long userId) {
+	public List<String> getRoleNames(int userId) {
 		List<String> list = new ArrayList<>();
 		String sql = "Select ur.roles.roleName from " + Role.class.getName() + " ur where ur.users.userId = :userId ";
 

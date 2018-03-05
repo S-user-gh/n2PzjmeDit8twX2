@@ -8,23 +8,23 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.tracker.StartApp.model.User;
+import com.tracker.StartApp.model.Users;
 
 @Repository
 @Transactional
-public class UserRepository {
+public class UsersRepository {
 
 	@Autowired
 	private EntityManager entityManager;
 
-	public User findUserAccount(String userName) {
+	public Users findUserAccount(String userName) {
 		try {
-			String sql = "Select e from " + User.class.getName() + " e Where e.userName = :userName ";
+			String sql = "Select e from " + Users.class.getName() + " e Where e.userName = :userName ";
 
-			Query query = entityManager.createQuery(sql, User.class);
+			Query query = entityManager.createQuery(sql, Users.class);
 			query.setParameter("userName", userName);
 
-			return (User) query.getSingleResult();
+			return (Users) query.getSingleResult();
 		} catch (NoResultException e) {
 			return null;
 		}
