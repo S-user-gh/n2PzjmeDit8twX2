@@ -32,3 +32,7 @@ CREATE TABLE `user_roles` (
 
 INSERT INTO roles (`role`) values ('ADMIN');
 INSERT INTO roles (`role`) values ('USER');
+
+INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('1','1');
+INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('1','2');
+INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('2','2');
